@@ -15,10 +15,11 @@ Role Variables
 --------------
 From this role:
 
-| Name                       | Default value         |                                                          |
-|----------------------------|-----------------------|----------------------------------------------------------|
-| oreg_url                   | UNDEF (Optional)      | Default docker registry to use                           |
-| oreg_url_node              | UNDEF (Optional)      | Default docker registry to use, specifically on the node |
+| Name                                     | Default value         |                                                          |
+|------------------------------------------|-----------------------|----------------------------------------------------------|
+| oreg_url                                 | UNDEF (Optional)      | Default docker registry to use                           |
+| oreg_url_node                            | UNDEF (Optional)      | Default docker registry to use, specifically on the node |
+| openshift_persistentlocalstorage_enabled | false                 | Enable the persistent local storage                      |
 
 Dependencies
 ------------

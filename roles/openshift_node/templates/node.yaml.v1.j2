@@ -29,6 +29,10 @@ kubeletArguments: {{ openshift.node.kubelet_args | default(None) | to_padded_yam
   runtime-request-timeout:
   - 10m
 {% endif %}
+{% if openshift_node_use_persistentlocalvolumes | bool %}
+  feature-gates:
+  - PersistentLocalVolumes=true
+{% endif %}
 {% if openshift.common.version_gte_3_3_or_1_3 | bool %}
 masterClientConnectionOverrides:
   acceptContentTypes: application/vnd.kubernetes.protobuf,application/json
