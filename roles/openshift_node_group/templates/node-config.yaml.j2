@@ -26,7 +26,7 @@ kubeletArguments:
   cloud-provider:
   - {{ openshift_node_group_cloud_provider }}
   node-labels: {{ openshift_node_group_labels | to_json }}
-{% if openshift_node_use_persistentlocalvolumes | bool %}
+{% if openshift_node_group_use_persistentlocalvolumes | bool %}
   feature-gates:
   - PersistentLocalVolumes=true
 {% endif %}
