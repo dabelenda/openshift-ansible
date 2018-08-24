@@ -18,6 +18,7 @@
 - name: Pre-pull Origin image
   docker_image:
     name: "{{ osm_image }}"
+    force: true
   environment:
     NO_PROXY: "{{ openshift.common.no_proxy | default('') }}"
   when: control_plane_image.stdout_lines == []

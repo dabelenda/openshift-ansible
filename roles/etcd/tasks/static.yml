@@ -9,6 +9,7 @@
 - name: Pre-pull etcd image
   docker_image:
     name: "{{ etcd_image }}"
+    force: true
   environment:
     NO_PROXY: "{{ openshift.common.no_proxy | default('') }}"
   when: etcd_image_exists.stdout_lines == []

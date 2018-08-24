@@ -7,6 +7,7 @@
 - name: Pre-pull node image
   docker_image:
     name: "{{ osn_image }}"
+    force: true
   environment:
     NO_PROXY: "{{ openshift.common.no_proxy | default('') }}"
   when: node_image.stdout_lines == []
